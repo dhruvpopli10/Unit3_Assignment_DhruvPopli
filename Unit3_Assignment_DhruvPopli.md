@@ -55,7 +55,7 @@ Bounding prunes branches whose best possible value ≤ current best.
 
 **SECTION B - Algorithms & Recurrences \[15 Marks\]**
 
-- **Matrix Chain Multiplication (A₁:5×4, A₂:4×6, A₃:6×2, A₄:2×7)  
+- **6) Matrix Chain Multiplication (A₁:5×4, A₂:4×6, A₃:6×2, A₄:2×7)  
     a) Write m\[i,j\] recurrence and base case (no derivation). \[4\]\[7\]\[8\]**
 
 a)Base: m\[i,i\] = 0
@@ -65,7 +65,7 @@ Recurrence: m\[i,j\] = min_{i≤k<j} (m\[i,k\] + m\[k+1,j\] + p_{i−1}·p_k·p_
 
 b) Minimum scalar multiplications = 158
 
-- **Longest Common Subsequence (X="ABCDGH", Y="AEDFHR")  
+- **7) Longest Common Subsequence (X="ABCDGH", Y="AEDFHR")  
     a) Write the LCS(i,j) recurrence and base. \[1\]**
 
 Base: LCS(i,0)=LCS(0,j)=0
@@ -80,8 +80,8 @@ else: LCS(i,j)=max(LCS(i−1,j), LCS(i,j−1))
 
 b) LCS length = 3
 
-- **Optimal Binary Search Tree (keys: 10,20,30; p: 0.4,0.3,0.3; assume q=0)**
-  - **Write w\[i,j\] and e\[i,j\] DP formulations with base. \[1\]**
+- **8) Optimal Binary Search Tree (keys: 10,20,30; p: 0.4,0.3,0.3; assume q=0)**
+  - **a)Write w\[i,j\] and e\[i,j\] DP formulations with base. \[1\]**
 
 Base: e\[i,i−1\]=w\[i,i−1\]=0
 
@@ -89,16 +89,16 @@ w\[i,j\]=w\[i,j−1\]+p_j
 
 e\[i,j\]=min_{r=i..j}(e\[i,r−1\]+e\[r+1,j\]+w\[i,j\])
 
-- 1. **State the minimum expected search cost (number only). \[1\]**
+** b) State the minimum expected search cost (number only). \[1\]**
 
 b) **Minimum expected search cost = 1.9**
 
-- **0/1 Knapsack - Branch & Bound (W=5; w={2,3,4,5}, p={3,4,5,6})**
-  - **Write the fractional upper bound formula used for pruning. \[6\]\[9\]\[5\]**
+9) **0/1 Knapsack - Branch & Bound (W=5; w={2,3,4,5}, p={3,4,5,6})**
+  a) **Write the fractional upper bound formula used for pruning. \[6\]\[9\]\[5\]**
 
 UB = v + (W−w) \* (p_next / w_next) // fractional upper bound
 
-- 1. **Show level-0 and level-1 nodes (include/exclude first item) with (v,w,ub) only. \[5\]\[6\]**
+b) **Show level-0 and level-1 nodes (include/exclude first item) with (v,w,ub) only. \[5\]\[6\]**
 
 Level-0: (v=0, w=0, ub=10.0)
 
@@ -106,13 +106,13 @@ Level-1 Include: (v=3, w=2, ub=9.0)
 
 Level-1 Exclude: (v=0, w=0, ub=10.0)
 
-- **TSP - Dynamic Programming (Held-Karp; 4 cities, example D given)**
-  - **Write the C\[S,j\] recurrence and final answer expression. \[1\]**
+10) **TSP - Dynamic Programming (Held-Karp; 4 cities, example D given)**
+  a)**Write the C\[S,j\] recurrence and final answer expression. \[1\]**
 
 C\[S,j\] = min_{k∈S−{j}} (C\[S−{j},k\] + D\[k\]\[j\])
 
 Final: min_{j≠1} (C\[{all},j\] + D\[j\]\[1\])
 
-- 1. **Initialize base entries C\[{k},k\] for k=2..4 (numbers only for the given D). \[1\]**
+- b) **Initialize base entries C\[{k},k\] for k=2..4 (numbers only for the given D). \[1\]**
 
 C\[{2},2\]=D\[1\]\[2\], C\[{3},3\]=D\[1\]\[3\], C\[{4},4\]=D\[1\]\[4\]
